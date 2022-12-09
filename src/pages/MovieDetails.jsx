@@ -2,7 +2,7 @@ import { MovieInfoItemStyled } from 'components/MovieInfoItem/MovieInfoItem.styl
 import { getMovieInfo } from '../services/getMovies';
 import { useState, useEffect } from 'react';
 import { useParams, Outlet, useLocation } from 'react-router-dom';
-import { TailSpin } from 'react-loader-spinner';
+import { Vortex } from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
 import { IoArrowBack } from 'react-icons/io5';
 
@@ -64,15 +64,14 @@ const MovieDetails = () => {
           <hr />
         </>
       ) : (
-        <TailSpin
+        <Vortex
+          visible={true}
           height="80"
           width="80"
-          color="#000"
-          ariaLabel="tail-spin-loading"
-          radius="1"
+          ariaLabel="vortex-loading"
           wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
+          wrapperClass="vortex-wrapper"
+          colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
         />
       )}
       <Outlet />
