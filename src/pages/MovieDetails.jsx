@@ -6,7 +6,7 @@ import { TailSpin } from 'react-loader-spinner';
 import { Link } from 'react-router-dom';
 import { IoArrowBack } from 'react-icons/io5';
 
-const MovieInfo = () => {
+const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const [isLoad, setIsLoad] = useState(false);
   const { movieId } = useParams();
@@ -80,4 +80,4 @@ const MovieInfo = () => {
   );
 };
 
-export default MovieInfo;
+export default MovieDetails;
