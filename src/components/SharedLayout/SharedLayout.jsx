@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Link, Container, Header } from './SharedLayout.styled';
 import { Suspense } from 'react';
-import { TailSpin } from 'react-loader-spinner';
+import { Vortex } from 'react-loader-spinner';
 
 const SharedLayout = () => {
   return (
@@ -14,15 +14,14 @@ const SharedLayout = () => {
       </Header>
       <Suspense
         fallback={
-          <TailSpin
+          <Vortex
+            visible={true}
             height="80"
             width="80"
-            color="#000"
-            ariaLabel="tail-spin-loading"
-            radius="1"
+            ariaLabel="vortex-loading"
             wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
+            wrapperClass="vortex-wrapper"
+            colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
           />
         }
       >
