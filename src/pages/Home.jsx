@@ -1,7 +1,7 @@
-import LoadMoreButton from '../components/LoadMoreButton/LoadMoreButton';
 import HomeGalleryList from '../components/GalleryList/HomeGalleryList';
 import { useState, useEffect } from 'react';
 import { getTrendsOfMovies } from '../services/getMovies';
+import LoadMoreButton from 'components/LoadMoreButton/LoadMoreButton';
 import { useLocation } from 'react-router-dom';
 
 const Home = () => {
@@ -11,16 +11,16 @@ const Home = () => {
 
   const location = useLocation();
 
-  const handleLoadMoreButton = () => {
-    setPage(prevState => prevState + 1);
-  };
-
   useEffect(() => {
     getTrendsOfMovies(page).then(movies => {
       setMovies(prevState => [...prevState, ...movies.results]);
       setTotal(movies.total_pages);
     });
   }, [page]);
+
+  const handleLoadMoreButton = () => {
+    setPage(prevState => prevState + 1);
+  };
 
   return (
     <>
